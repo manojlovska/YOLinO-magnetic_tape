@@ -1,0 +1,3 @@
+[submodule "Annotation-Conversion"]
+	path = Annotation-Conversion
+	url = https://github.com/JanSuklje/Annotation-Conversion.git

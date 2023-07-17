@@ -1,3 +1,13 @@
+# User folders
+experimentation_scripts/
+out/
+debug/
+annotations*
+obj_train_data/
+tensors/
+*pt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
