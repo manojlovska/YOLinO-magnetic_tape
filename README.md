@@ -17,6 +17,11 @@
    pip install -r Annotation-Conversion/requirements.txt
    ```
 ### Usage
+To generate the ground truth tensors run
    ```sh
    python3 toTensor.py
+   ```
+To visualize run
+   ```sh
+   python3 visualize.py
    ```
