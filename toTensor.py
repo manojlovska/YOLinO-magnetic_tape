@@ -56,25 +56,23 @@ converter = conv.Converter(annotation_path, width, height, square_size)
 # List of all folders containing images
 naloge = [os.listdir(in_images_path + x) for x in os.listdir(in_images_path)]
 
-for naloga in naloge:
-    # paths = [os.path.join(os.path.join(in_images_path, x), y) for x in os.listdir(in_images_path) for y in naloga]
-    # Recursevly find all images in in_image_path
-    images = [y for x in os.walk(in_images_path) for y in glob(os.path.join(x[0], '*.jpg'))]
+# Recursevly find all images in in_image_path
+images = [y for x in os.walk(in_images_path) for y in glob(os.path.join(x[0], '*.jpg'))]
 
-    # Go through every image and generate tensor for each one
-    for image_path in tqdm(images):
-        image_name = os.path.basename(image_path)
+# Go through every image and generate tensor for each one
+for image_path in tqdm(images):
+    image_name = os.path.basename(image_path)
 
-        polylines = converter.get_polylines(image_name)
-        squares = converter.to_cartesian(polylines)
+    polylines = converter.get_polylines(image_name)
+    squares = converter.to_cartesian(polylines)
 
-        img_tensor = toTensor(squares)
-        
-        # Save tensors in tensor folder
-        tensor_name = '.'.join(image_name.split('/')[-1].split('.')[:-1]) + '_tensor.pt'
-        tensor_path = out_tensors_path + '/'.join(image_path.split('/')[2:-1]) + '/' + tensor_name
- 
-        torch.save(img_tensor, tensor_path)
+    img_tensor = toTensor(squares)
+    
+    # Save tensors in tensor folder
+    tensor_name = '.'.join(image_name.split('/')[-1].split('.')[:-1]) + '_tensor.pt'
+    tensor_path = out_tensors_path + '/'.join(image_path.split('/')[2:-1]) + '/' + tensor_name
+
+    torch.save(img_tensor, tensor_path)
 
 
 
