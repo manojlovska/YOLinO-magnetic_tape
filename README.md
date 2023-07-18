@@ -4,9 +4,11 @@
 ### Clone the main repository and the submodules
    ```sh
    git clone https://github.com/manojlovska/YOLinO-magnetic_tape.git
-   
+   ```
+   ```sh
    cd YOLinO-magnetic_tape/
-   
+   ```
+   ```sh
    git submodule init
    git submodule update
    ```
