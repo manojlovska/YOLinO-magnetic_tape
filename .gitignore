@@ -5,6 +5,7 @@ debug/
 annotations*
 obj_train_data/
 tensors/
+DAIS/
 *pt
 
 
