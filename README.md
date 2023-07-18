@@ -14,7 +14,7 @@
    ```
 ### Install the requirements
    ```sh
-   pip install -r Annotation-Conversion/requirements.txt
+   pip install -r requirements.txt
    ```
 ### Usage
 To generate the ground truth tensors run
